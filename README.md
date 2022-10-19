@@ -12,3 +12,5 @@ The aim of this analysis is to answer business questions with data driven insigh
 ## Data
 
 The data set that contains information about Rockbuster’s film inventory, customers, and payments, among other things, is available [here](https://github.com/jgalvalisi/sql/files/9824756/dvdrental.1.zip).
+
+The corresponding visualizations can be seen [here](https://public.tableau.com/app/profile/jgalvalisi/viz/CF3_10c/Story1)
