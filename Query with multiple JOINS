@@ -1,0 +1,24 @@
+SQL query with multiple joins. 
+Used to find the Top 10 films by name, rating and genre
+
+SELECT 
+  a.title
+  , f.name
+  , a.rating
+  , SUM (d.amount) AS total_amount
+  ,  COUNT (DISTINCT(c.rental_id)) AS count_of_rentals
+FROM film A
+INNER JOIN inventory B
+  ON a.film_id = b.film_id
+INNER JOIN rental C 
+  ON b.inventory_id = c.inventory_id
+INNER JOIN payment D 
+  ON c.rental_id = d.rental_id
+INNER JOIN film_category E 
+  ON a.film_id = e.film_id
+INNER JOIN category F 
+  ON e.category_id = f.category_id
+GROUP BY a.film_id, f.name
+ORDER BY SUM(d.amount) DESC
+LIMIT 10
+;
